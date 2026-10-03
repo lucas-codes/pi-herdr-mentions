@@ -1,0 +1,9 @@
+# Paths exempt from agent-config-lint's path-based rules (1, 4, 5, 7, 9).
+# One glob pattern per line, matched against the repo-relative path with
+# bash `case`. Blank lines and lines starting with # are ignored.
+#
+# Most repos need no entries here — leave this file as-is. It exists only for
+# the rare repo that tracks files whose names collide with repo-entry files
+# (`CLAUDE.md`, `AGENTS.md`) but are not repo-entry files themselves. Any
+# entry added in a product repo is a review question: confirm it before
+# merging.

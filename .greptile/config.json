@@ -1,0 +1,21 @@
+{
+  "strictness": 2,
+  "commentTypes": ["logic", "syntax"],
+  "ignorePatterns": "package-lock.json",
+  "excludeAuthors": ["renovate[bot]"],
+  "instructions": "A pi extension loaded straight from TypeScript source; there is no build step. It shells out to the herdr CLI and parses its JSON output.",
+  "rules": [
+    {
+      "id": "peer-range-star",
+      "rule": "@earendil-works/* packages stay in peerDependencies with the \"*\" range and must never appear in dependencies: pi supplies them, and a bundled copy breaks its module mapping.",
+      "scope": ["package.json"],
+      "severity": "high"
+    },
+    {
+      "id": "no-relative-imports",
+      "rule": "The extension must stay a single file with no relative imports: users can symlink it into ~/.pi/agent/extensions, and pi resolves imports from the symlink's location.",
+      "scope": ["extensions/**"],
+      "severity": "high"
+    }
+  ]
+}

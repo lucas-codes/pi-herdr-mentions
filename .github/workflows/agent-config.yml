@@ -1,0 +1,34 @@
+name: agent-config
+
+on:
+  pull_request:
+    paths:
+      - "AGENTS.md"
+      - "**/AGENTS.md"
+      - "CLAUDE.md"
+      - "**/CLAUDE.md"
+      - ".agents/**"
+      - ".claude/**"
+      - ".pi/**"
+      - "scripts/agent-config-lint.sh"
+      - ".github/workflows/agent-config.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "AGENTS.md"
+      - "**/AGENTS.md"
+      - "CLAUDE.md"
+      - "**/CLAUDE.md"
+      - ".agents/**"
+      - ".claude/**"
+      - ".pi/**"
+      - "scripts/agent-config-lint.sh"
+      - ".github/workflows/agent-config.yml"
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash scripts/agent-config-lint.sh
