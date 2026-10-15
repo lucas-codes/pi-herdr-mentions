@@ -20,9 +20,10 @@
       "groupName": "npm non-major dependencies"
     },
     {
-      "description": "pi supplies these at runtime; its package docs require a \"*\" peer range",
+      "description": "Peers stay \"*\" because pi supplies them at runtime; engines is a minimum set by pi's own Node requirement, not a version to chase",
       "matchDepTypes": [
-        "peerDependencies"
+        "peerDependencies",
+        "engines"
       ],
       "enabled": false
     },
